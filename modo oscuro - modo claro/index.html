@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prueba mood</title>
+<!----------------------------------------------------- CSS------------------------------------------------------->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        /*  height: 100vh;
+    width: auto; 
+    /* background-color: blueviolet; */
+        width: 100%;
+        height: 100vh;
+      }
+/***************************************MODO OSCURO / MODO CLARO **************************************************/      
+    .ligth-mood {
+        --fondoSecundario: #47484b;
+        --fondoPrimario: #2b2c36;
+        --colorLetra: #f0f3f4;
+        --tonalidad: #333835;
+        --generalFont: 'Bebas Neue', cursive;
+
+      }
+
+      .dark-mood {
+        --fondoPrimario: #d0ece7;
+        --fondoSecundario: #abebc6;
+        --colorLetra: #2c3e50;
+        --tonalidad: #a2d9ce;
+        --generalFont: 'Bebas Neue', cursive;
+
+      }
+      h1{
+        color: var(--colorLetra);
+      }
+      p{
+        color: var(--colorLetra);
+        font-size: var(--letra);
+      }
+
+      body{
+        background-color: var(--fondoPrimario);
+      }
+    </style>
+  </head>
+  <!----------------------------------------------------- HTML------------------------------------------------------->
+
+  <body class="ligth-mood">
+    <h1>Modo oscuro</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ut eum
+      quos voluptatum quo doloribus dolorum dolor omnis soluta nemo, impedit
+      praesentium voluptas molestiae. At ab repudiandae praesentium hic
+      repellat.
+    </p>
+    <button id="boton">
+      <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+      cambiar modo
+    </button>
+
+<!----------------------------------------------------- BUTTON------------------------------------------------------->
+    <script>
+      const boton = document.getElementById('boton');
+      const body = document.querySelector('body');
+      boton.addEventListener("click",()=>{
+          body.classList.toggle("dark-mood");
+          body.classList.toggle("ligth-mood");
+      })
+    </script>
+  </body>
+</html>
