@@ -294,16 +294,7 @@ background-color: var(--color-background-icons);
     cursor: pointer;
     border: none;
     border-radius: 3px;
-    /*position: absolute;
-    top: 533px;
-    left: 1185px;
-    font-size: 10px;
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--color-background-input);
-    border: none;
-    border-radius: 3px;
-    color: var(--color-white);
-    padding: 7px;*/
+
 }
 .reestablecer:hover{
     background-color: var(--color-background-icons);
@@ -490,7 +481,7 @@ button:hover{
     }
     .cuadroMeme{
         margin-top: 70px;
-        width: 330px;
+        width: 300px;
         height: 350px;
         margin-left:5px;
     }
@@ -518,14 +509,17 @@ button:hover{
         background-color: var(--color-background-input);
     }
     .panelDerecho{
-        width: 375px;
+        width: 100%;
     }
-
-
-
-
-
-
-
+    .div-color-section-2{
+        width: 170px;
+    }
+    .button-icon{
+        height: 26px;
+    }
+    .main-contenedor{
+        padding: 0;
+        width: 100%;
+    }
 
 }
