@@ -19,9 +19,9 @@
     <!--**********************************************************
                                 HEADER 
     ************************************************************--> 
-    <header class="generadorDeMememes dark-mood-header">
-        <h1 class="primerTitulo">Generador de Memes</h1>
-        <div class="ImagenTextoModoOscuro">
+    <header class="dark-mood-header">
+        <h1 class="tituloGeneradorDeMemes">Generador de Memes</h1>
+        <div class="iconosPrincipales">
             <button class="icons" id="botonImagen"><i class="fas fa-file-image"></i> Imagen </button>
             <button class="icons" id="botonTexto"><i class="fas fa-font"></i> Texto </button>
             <button class="icons" id="botonModo"><i class="far fa-lightbulb"></i> Modo Oscuro </button>
@@ -32,11 +32,11 @@
     ************************************************************-->
     <main class="main-contenedor">
         <div class="cuadroMeme">
-            <p class="topText"><strong>TOP TEXT</strong></p>
+            <p class="topText">TOP TEXT</p>
             <div src="" alt="" class="memeImagen"></div>
-            <p class="bottomText"> <strong>BOTTOM TEXT</strong></p>
+            <p class="bottomText">BOTTOM TEXT</p>
         </div>
-        <div class="button">
+        <div class="contenedor-boton-descarga-imagen">
             <button type="button" class="boton-descarga-imagen"><i class="fas fa-download"></i> Descargar meme</button>
         </div>
     </main>
@@ -142,7 +142,7 @@
                 </div>
             </div>
             <!----------- FUENTE -------------------->
-            <div>
+            <div class="div-fuente">
                 <h3 class="tituloH3">FUENTE</h3>
                 <select class="panel-select div-textarea" id="fuentesOpc">
                     <option value="Arial">Arial</option>

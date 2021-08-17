@@ -2,9 +2,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: var(--color-background-body);
-}
 :root{
     --color-background: #191e2b;
     --color-background-body: #30343f;
@@ -31,7 +28,6 @@ body{
     --color-background-green: green;
     --color-white: black;
 }
-
 .dark-mood {
     --color-background: #191e2b;
     --color-background-body: #30343f;
@@ -44,34 +40,43 @@ body{
     --color-background-green: green;
     --color-white: white;
 }
+body{
+    background-color: var(--color-background-body);
+    height: 657px;
+    display: flex;
+    flex-direction: column;
+}
 /*//////////////////////////////////////////////////////////////
                             HEADER  
 /////////////////////////////////////////////////////////////*/
-.generadorDeMememes{
+header{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 95px;
+    height: 90px;
     background-color: var(--color-background);
     position: relative;
 }
-.primerTitulo{
+.tituloGeneradorDeMemes{
+    width:100%;
+    height: 50%;
     color: var(--color-white);
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    
+    padding-top:8px;
 }
-.ImagenTextoModoOscuro{
+.iconosPrincipales{
+    width:100%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     color: var(--color-white);
-    padding-top: 20px;
 }
 .icons{
     margin-left: 10px;
@@ -81,7 +86,7 @@ body{
     padding: 5px;
     color: var(--color-white);
     border: none;
-    font-size: 11.5px;
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
 .icons:hover{
@@ -97,43 +102,65 @@ body{
                             CUADRO MEME
 /////////////////////////////////////////////////////////////*/
 .main-contenedor{
-    flex-grow: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--color-background-body);
-    padding: 0 20px;
+    height: 567px;
 }
+/* IMAGEN - TEXTO ARRIBA Y ABAJO */
 .cuadroMeme{
-    width: 450px;
-    height: 450px;
-    background-color: black;
-    position: relative;
+    width: 440px;
+    height: 440px;
+    background-color: var(--color-background-black);
     display: flex;
     flex-direction: column;
-    margin-top: 25px;
+    margin-top: 25px;  
 }
 .topText , .bottomText{
     font-family: 'Oswald', sans-serif;
     background-color: var(--color-background-white);
-    font-size: 24px;
-    font-weight: 100;
-    padding: 30px;
+    font-size: 36px;
+    font-weight: 900;
+    padding: 12px 50px;
     text-align: center;
+    width: 440px;
+    height: 80px;
 }
-
 .memeImagen{
-    height: 60%;
-    flex-grow: 1;
+    height: 398px;
+    width: 440px;
     background-size: cover;
-}
-
+}/* IMAGEN - TEXTO ARRIBA Y ABAJO */
 /*//////////////////////////////////////////////////////////////
-PANEL DERECHO  
+                            BOTON DESCARGA
+/////////////////////////////////////////////////////////////*/
+.contenedor-boton-descarga-imagen{
+    color: var(--color-white);
+    padding: 15px;
+    margin-top: 15px;
+}
+.boton-descarga-imagen{
+    background-color: var(--color-background-green);
+    color: var(--color-white);
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+.contenedor-boton-descarga-imagen:hover{
+    background-color: var(--color-background-icons);
+}
+/*//////////////////////////////////////////////////////////////
+                           PANEL DERECHO  
 /////////////////////////////////////////////////////////////*/
 .panelDerecho{
-    width: 190px;
+    width: 17%;
     height: 657px;
     background-color:var(--color-background-panel);
     position: fixed;
@@ -148,7 +175,6 @@ PANEL DERECHO
     position: fixed;
     display: none;
 }
-
 .botonCerrarPanel:focus,
 .botonCerrarPanel:hover {
   background-color: var(--color-background-icons);
@@ -159,11 +185,11 @@ PRIMERA SECTION
 /////////////////////////////////////////////////////////////*/
 .tituloImagen , .tituloTexto{
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     padding-top: 18px;
     text-align: center;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 /************************* URL ********************************/
 .inputText{
@@ -185,12 +211,10 @@ PRIMERA SECTION
 }
 .tituloUrl , .tituloFondo , .tituloH3{
     font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
 }
-
 /************************* FONDO ********************************/
-
 .div-panel{
     display: flex;
     flex-direction: column;
@@ -202,18 +226,21 @@ PRIMERA SECTION
 }
 .div-color-opc{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     margin-top: 5px;
+    height: 41px;
+    width: 200px;
 }
 .div-color{
-    width: 80px;
-    height: 30px;
+    width: 95px;
+    height: 28px;
     background-color: var(--color-background-input);
-    text-align: center;
     border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
 }
-
 .inputFondo {
 	-webkit-appearance: none;
 	border: none;
@@ -221,23 +248,21 @@ PRIMERA SECTION
 	height: 15px;
     border-radius: 50%;
     background-color: var(--color-background-white);
-    text-align: center;
-    margin-bottom: 7px;
+    margin-right: 15px;
 }
 .inputFondo::-webkit-color-swatch {
 	border: none;
 }
-
 .span-blanco{
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 100;
     text-align: center;
 }
 .div-opc{
+    width: 95px;
+    height: 28px;
     background-color: var(--color-background-input);
     font-family: 'Open Sans', sans-serif;
-    width: 80px;
-    height: 30px;
     border-radius: 3px;
     font-size: 10px;
     border: none;
@@ -255,7 +280,6 @@ background-color: var(--color-background-icons);
     font-weight: 700;
     font-size: 10px;
     margin-top: 20px;
-
 }
 .panel-control{
     font-size: 10px;
@@ -294,13 +318,11 @@ background-color: var(--color-background-icons);
     cursor: pointer;
     border: none;
     border-radius: 3px;
-
 }
 .reestablecer:hover{
     background-color: var(--color-background-icons);
     cursor: pointer;
 }
-
 /*//////////////////////////////////////////////////////////////
                           SEGUNDA SECTION 
 /////////////////////////////////////////////////////////////*/
@@ -308,7 +330,7 @@ background-color: var(--color-background-icons);
     display: flex;
     flex-direction: column;
 }
-/************************* TEXT SUPERIOR E INFERIOR ********************************/
+/************** TEXT SUPERIOR E INFERIOR ******************/
 .div-margin{
     margin-bottom: 15px;
 }
@@ -342,7 +364,6 @@ background-color: var(--color-background-icons);
     height: 10px;
     margin-top: 12px;
 }
-
 .label-checkbox{
     font-size: 10px;
     margin-left: 7px;
@@ -357,7 +378,7 @@ background-color: var(--color-background-icons);
 }
 .div-button{
     display:flex;
-    flex-direction: row;
+    align-items: center;
 }
 .panel-input-number {
     padding: 5px 10px;
@@ -382,9 +403,7 @@ background-color: var(--color-background-icons);
     margin-left: 5px;
     cursor: pointer;
 }
-
 /************************* COLOR ********************************/
-
 .div-row{
     display: flex;
     justify-content: space-between;
@@ -413,11 +432,7 @@ background-color: var(--color-background-icons);
 .inputColor::-webkit-color-swatch {
 	border: none;
 }
-.span-blanco{
-    font-size: 11px;
-    font-weight: 100;
-    text-align: center;
-}
+
 .div-color-section-2{
     width: 80px;
     height: 26px;
@@ -427,7 +442,6 @@ background-color: var(--color-background-icons);
     padding-top: 2px;
     margin-top: 5px;
 }
-
 /************************* CONTAINER ********************************/
 .margin-left{
     margin-left: 0;
@@ -436,90 +450,334 @@ background-color: var(--color-background-icons);
     font-size:11px;
     font-family: 'Open Sans', sans-serif;
 }
-
-
-/*//////////////////////////////////////////////////////////////
-                            BOTON DESCARGA
-/////////////////////////////////////////////////////////////*/
-
-.button{
-    position: absolute;
-    top: 600px;
-    left: 610px;
-    color: var(--color-white);
-}
-.boton-descarga-imagen{
-    background-color: var(--color-background-green);
-    color: var(--color-white);
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    padding: 10px;
-    border-radius: 3px;
-    outline: 0;
-    border: none;
-    cursor: pointer;
-}
-button:hover{
-    background-color: var(--color-background-icons);
-}
-
 /************************* OCULTO ********************************/
 .oculto{
     display:none;
 }
-
 /*****************************************************************************************************************************************
                                                                    RESPONSIVE 
 *****************************************************************************************************************************************/
-@media (max-width: 550px){
-    .generadorDeMememes{
+@media (max-width: 576px) {
+    body{
         width: 100%;
+    }
+    header{
+        width:100%;
+        height: 102px;
+    }
+    .main-contenedor{
+        width:100%;
+        height:738px;
+    }
+    .cuadroMeme{
+        height: 436px;
+        width: 436px;
+    }
+    .topText , .bottomText{
+        width: 436px;
+        height: 59px;
+    }
+    .memeImagen{
+        height: 418px;
+    }
+    .icons{
+        font-size: 14px;
+    }
+    .panelDerecho{
+        width: 100%;
+        height: 100%;
+    }
+    .botonCerrarPanel{
+        color: var(--color-background-white);
+        display: flex;
+        background-color: var(--color-background-panel);
+        border: none;
+    }
+    .sectionTexto , .sectionImagen{
+        width: 546px;
+    }
+}
+ 
+@media (max-width: 768px) {
+    body{
+        width: 100%;
+        height: 894px;
+    }
+    header{
+        width:100%;
         height: 115px;
+    }
+    .main-contenedor{
+        width:100%;
+        height:779px;
+    }
+    .cuadroMeme{
+        height: 610px;
+        width: 610px;
+    }
+    .topText , .bottomText{
+        width: 610px;
+        height: 76px;
+        font-size: 38px;
+    }
+    .memeImagen{
+        height: 458px;
+    }
+    .icons{
+        font-size: 14px;
+    }
+    .boton-descarga-imagen{
+        width: 160px;
+        height: 49px;
+        font-size: 14px;
+    } 
+    .panelDerecho{
+        width: 40%;
+        height: 894px;
+        padding: 5px 15px;
+    }
+    .botonCerrarPanel{
+        color: var(--color-background-white);
+        display: flex;
+        background-color: var(--color-background-panel);
+        border: none;
+    }
+    .sectionTexto , .sectionImagen{
+        width: 270px;
+        height: 794px;
+    }
+} 
+
+@media (max-width: 992px) {
+    body{
+        width: 100%;
+        height: 804px;
+    }
+    header{
+        width:100%;
+        height: 115px;
+    }
+    .tituloGeneradorDeMemes{
+        font-size: 36px;
+    }
+    .main-contenedor{
+        width:100%;
+        height:689px;
+    }
+    .cuadroMeme{
+        height: 610px;
+        width: 610px;
+    }
+    .topText , .bottomText{
+        width: 610px;
+        height: 101px;
+        font-size: 50px;
+    }
+    .memeImagen{
+        height: 408px;
+    }
+    .icons{
+        font-size: 14px;
+    }
+    .boton-descarga-imagen{
+        width: 160px;
+        height: 49px;
+        font-size: 14px;
+    } 
+    .panelDerecho{
+        width: 27%;
+        height: 804px;
+        padding: 5px 15px;
+    }
+    .botonCerrarPanel{
+        color: var(--color-background-white);
+        display: flex;
+        background-color: var(--color-background-panel);
+        border: none;
+    }
+    .sectionTexto , .sectionImagen{
+        width: 230px;
+        height: 784px;
+    }
+} 
+/* @media (max-width: 1200px) {
+    body{
+        width: 100%;
+        height: 1040px;
+    }
+    header{
+        width:100%;
+        height: 115px;
+    }
+    .tituloGeneradorDeMemes{
+        font-size: 36px;
+    }
+    .main-contenedor{
+        width:100%;
+        height:925px;
+    }
+    .cuadroMeme{
+        height: 610px;
+        width: 610px;
+    }
+    .topText , .bottomText{
+        width: 610px;
+        height: 101px;
+        font-size: 50px;
+    }
+    .memeImagen{
+        height: 408px;
+    }
+    .icons{
+        font-size: 14px;
+    }
+    .boton-descarga-imagen{
+        width: 160px;
+        height: 49px;
+        font-size: 14px;
+    } 
+}   */
+/* 
+@media (max-width: 1400px) {
+    body{
+        width: 100%;
+        height: 1040px;
+    }
+    header{
+        width:100%;
+        height: 115px;
+    }
+    .tituloGeneradorDeMemes{
+        font-size: 36px;
+    }
+    .main-contenedor{
+        width:100%;
+        height:925px;
+    }
+    .cuadroMeme{
+        height: 610px;
+        width: 610px;
+    }
+    .topText , .bottomText{
+        width: 610px;
+        height: 92px;
+        font-size: 46px;
+    }
+    .memeImagen{
+        height: 426px;
     }
     .icons{
         font-size: 16px;
     }
-    .cuadroMeme{
-        margin-top: 70px;
-        width: 300px;
-        height: 350px;
-        margin-left:5px;
-    }
-    .topText , .bottomText{
-        padding: 5px;
-    }
-    .button{
-        position: absolute;
-        top: 565px;
-        left: 130px;
-    }
-    .botonCerrarPanel {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        border-radius: 3px;
-        cursor: pointer;
-        border: 0;
-        background-color: transparent;
-        display: block;
-        outline: 0;
-        color: var(--color-background-icons) ;
-    }
-    .botonCerrarPanel:focus, .botonCerrarPanel:hover {
-        background-color: var(--color-background-input);
-    }
+    .boton-descarga-imagen{
+        width: 160px;
+        height: 49px;
+        font-size: 14px;
+    } 
     .panelDerecho{
-        width: 100%;
+        width: 18%;
+        padding: 30px 15px;
+    }
+    .tituloImagen , .tituloTexto{
+        height:24px ;
+        width: 230px;
+        font-size: 18px;
+        padding: 0;
+        margin: 0 0 20px;
+    }
+    .sectionImagen{
+        height:726px;
+    }
+    .tituloUrl , .tituloFondo ,.tituloFiltro , .tituloH3{
+        height: 17px;
+        font-size: 12px;
+    }
+    .inputText{
+        height: 36px;
+    }
+    .div-color-opc{
+        height: 41px;
+        width: 230px;
+    }
+    .div-color{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .span-blanco{
+        font-size: 14px;
+    }
+    .div-panel{
+        margin-top:10px;
+    }
+    .div-opc , .div-color{
+        height: 41px;
+        width: 110px;
+        font-size: 13px;
+    }
+    .panel-control{
+        height: 33px;
+        margin-top: 15px;
+    }
+    label{
+        font-size: 12px;
+        width: 230px;
+    }
+    .input-panel{
+        height: 6px;
+        margin-top: 10px;
+    }
+    .reestablecer-boton{
+        height:36px ;
+        width: 145px;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    .panel-textarea{
+        height: 36px;
+        font-size: 14px;
+    }
+    .div-margin , .div-fuente{
+        margin-top: 10px;
+    }
+    .marginTop{
+        margin-top: 25px;
+    }
+    .tituloH3{
+        margin-bottom: 4px;
     }
     .div-color-section-2{
-        width: 170px;
+        height:36px ;
+        width:110px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .div-button{
+        height:41px;
+        width: 222px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .panel-input-number{
+        height:36px;
+        width:112px;
+    }
+    .button-icon , .panel-select{
+        height:36px;
     }
     .button-icon{
-        height: 26px;
+        width:30px;
     }
-    .main-contenedor{
-        padding: 0;
-        width: 100%;
+    .buttonText{
+        height:36px;
+        width: 70px;
     }
-
-}
+    .label-checkbox{
+        font-size: 12px;
+    }
+    .inputText{
+        height: 36px;
+        width: 222px;
+    }
+}  */
