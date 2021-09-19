@@ -46,16 +46,24 @@ const inputCheckboxTop = document.querySelector(".input-checkbox-top");
 const inputCheckboxBottom = document.querySelector(".input-checkbox-bottom");
 
 textSuperior.addEventListener("input",()=>{
+  // No dejes nunca console log en una entrega. 
   console.log(textSuperior.value);
   topText.innerText = textSuperior.value;
   topText.style="font-family: 'Open Sans', sans-serif;font-weight: 800;";
 })
+// ojo con la sintaxis aca (y en el resto de tu codigo), deja espacios en tus funciones: 
+// textInferior.addEventListener("input", () => {
 textInferior.addEventListener("input",()=>{
+  // No dejes nunca console log en una entrega. 
   console.log(textInferior.value);
   bottomText.innerText=textInferior.value;
   bottomText.style="font-family: 'Open Sans', sans-serif;font-weight: 800;";
 })
 
+// Este nombre de funcion no describe adecuadamente lo que hace esta funcion. 
+// "ocultarTextosMeme" por ejemplo seria mejor nombre
+// Me parece muy mala idea que los dos textos llamen a la misma funcion. 
+// Se que asi lo hace el modelo de Ada, pero no es la decision correcta aca 
 const checkeando = ()=>{
   if(inputCheckboxTop.checked){
     topText.classList.add("oculto")
@@ -106,6 +114,14 @@ const reestablecerBoton = document.querySelector(".reestablecer-boton");
 const panelControl = document.querySelector("panel-control");
 
 
+// Cuando sea muy largo tu codigo, deja saltos de linea asi es mas facil para el lector
+// memeImagen.style.filter = `
+//   brightness(${brillo.value}) opacity(${opacidad.value}) 
+//   contrast(${contraste.value}%) blur(${desenfoque.value}px) 
+//   grayscale(${gris.value}%) sepia(${sepia.value}) 
+//   hue-rotate(${hue.value}deg) saturate(${saturado.value}%) 
+//   invert(${negativo.value})
+//   `;
 const actualizarFiltros = ()=>{
     memeImagen.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px) grayscale(${gris.value}%) sepia(${sepia.value}) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
 }
@@ -154,6 +170,10 @@ const actualizarTamanioTexto = () =>{
   bottomText.style.fontSize = `${tamanio}px` ;
 }
 
+// Con una mano en el corazón: sabés lo que hacen estas ordenes, 
+// y podrias explicarme que es Math.round, que es window.innerWith, y
+// por que haces un Math.round del window.innerWidth si te lo pidiera, 
+// o las sacaste como estaban del modelo de Ada?
 const tamanioTexto = Math.round((window.innerWidth / 10) * 0.5)
 const padding = Math.round((window.innerWidth / 10) * 0.2)
 inputNumber.value = tamanioTexto
@@ -210,6 +230,7 @@ const fondoColor = document.getElementById ("fondoColor")
 const fondoNoCheckbox = document.getElementById("fondoNoCheckbox");
 
 const actualizarFondoTexto = () => {
+  // por que aca elegis usar el if con la negativa? afecta mucho la claridad del codigo
   if (!fondoNoCheckbox.checked) {
     const color = fondoColorInput.value;
 
@@ -231,7 +252,23 @@ const buttonClaro = document.getElementById("buttonClaro");
 const buttonOscuro = document.getElementById("buttonOscuro");
 
 
-
+// Esta funcion es incomprensible asi como esta. 
+// Se que esta similar al modelo de Ada, pero no siempre el modelo de Ada va a tener el mejor codigo, 
+// ni el mas claro para tu etapa de aprendizaje. Compara con algo asi:
+//   buttonNinguno.addEventListener('click', () => {
+//     topText.style.textShadow = "none"
+//     bottomText.style.textShadow = "none"
+//   }
+  
+//   buttonClaro.addEventListener('click', () => {
+//     topText.style.textShadow = "2px 2px 4px #FFFFFF"
+//     bottomText.style.textShadow = "2px 2px 4px #FFFFFF"
+//   }
+  
+//   buttonOscuro.addEventListener('click', () => {
+//     topText.style.textShadow = "2px 2px 2px #000000"
+//     bottomText.style.textShadow = "2px 2px 2px #000000"
+//   }
 const actualizarContorno = (contorno) => {
 const grosor = '2px'
 
@@ -263,6 +300,7 @@ buttonOscuro.addEventListener('click', () => {
 ////////////////// espaciado
 
 inputEspaciado.addEventListener('input', ()=>{
+  // por que esta variable se llama paddingY? Que significa la Y? 
   const paddingY = inputEspaciado.value;
   topText.style.padding = `${paddingY}px 50px`;
   bottomText.style.padding = `${paddingY}px 50px`;

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+<!-- La pagina esta en español, pero el lenguaje del documento es ingles. Un lector de pantalla trataria de 
+leerla en ingles (va a leer "yiniradour di mims") y buscadores como google van a recomendar esta web a 
+angloparlantes.
+El lang del documento debe coincidir con el lenguaje que usan los usuarios de esta pagina.  -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>brenda lamas</title>
+    <!-- Usa los imports de HTML! son mas rapidos -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
@@ -20,6 +25,8 @@
                                 HEADER 
     ************************************************************--> 
     <header class="dark-mood-header">
+        <!-- los nombres de clases y ids en html siempre se deben separar con guiones, no camelCase
+        Te lo comento aca pero se repite a lo largo de todo tu codigo -->
         <h1 class="tituloGeneradorDeMemes">Generador de Memes</h1>
         <div class="iconosPrincipales">
             <button class="icons" id="botonImagen"><i class="fas fa-file-image"></i> Imagen </button>
@@ -33,6 +40,8 @@
     <main class="main-contenedor">
         <div class="cuadroMeme">
             <p class="topText">TOP TEXT</p>
+            <!-- Hace falta un alt aca! si no un usuario con lector de pantalla 
+            no sabe que es esto, y es la parte mas importante de la web -->
             <div src="" alt="" class="memeImagen"></div>
             <p class="bottomText">BOTTOM TEXT</p>
         </div>
@@ -64,6 +73,8 @@
                         <span class="span-blanco">#FFFFFF</span>
                     </div> 
                     <div>
+                        <!-- Este select no se llama en ningun lugar de tu codigo JS. 
+                        No hace nada -->
                         <select class="div-opc">
                             <option value="ninguno">Ninguno</option>
                             <option value="aclarar">Aclarar</option>
@@ -128,6 +139,8 @@
                 <textarea class="panel-textarea div-textarea textSuperior" cols="22" rows="10"> TOP TEXT</textarea>
                 <!--<textarea aria-label="Texto superior" class="panel-control-input" id="top-text-input">TOP TEXT</textarea>-->
                 <div class="panel-container">
+                    <!-- como el label no rodea al input, ni tiene atributo for, esto impacta negativamente 
+                    en la accesibilidad. vale para todos tus elementos de form -->
                     <input type="checkbox" class="input-checkbox-top">
                     <label class="label-checkbox">Sin texto superior</label><br>
                 </div>
@@ -138,6 +151,12 @@
                 <textarea class="panel-textarea div-textarea textInferior" cols="22" rows="2"> BOTTOM TEXT</textarea>
                 <div class="panel-container">
                     <input type="checkbox" class="input-checkbox-bottom">
+                    <!-- No uses br nunca en HTML. No llegué a comentarlo en clase, pero esto es incorrecto. 
+                    Esa etiqueta es un resabio de viejas épocas en las cuales css no era tan poderoso 
+                    como ahora, pero usarla hoy viola uno de los principios básicos de programación: 
+                    la separación de responsabilidades. Los estilos se dan con css, la estructura se 
+                    da con html. Una decisión de estilo como un espaciado entre dos elementos debe 
+                    controlarse con css -flex, elementos en bloque, etc, no con `br`.  -->
                     <label class="label-checkbox">Sin texto inferior</label><br>
                 </div>
             </div>
@@ -156,6 +175,7 @@
                     <option value="Times New Roman">Time New Roman</option>
                 </select>
                 <div class="div-button">
+                    <!-- El name debe escribirse con guiones! El aria label es el texto -->
                     <input type="number" name="Tamaño de Fuente" class="panel-input-number div-textarea" min="12" value="40" >
                     <div class="button-container">
                         <button class="button-icon" id="buttonLeft">
@@ -196,6 +216,7 @@
             </div>
             <!----------- CONTORNO ---------------->
             <div class="marginTop">
+                <!-- No uses etiquetas como parte del nombre de clase. Esto es un titulo de aside.  -->
                 <h3 class="tituloH3">CONTORNO</h3>
                 <div class="button-container">
                     <button class="button-icon margin-left buttonText" id="buttonNinguno">Ninguno</button>
